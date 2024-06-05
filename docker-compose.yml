@@ -1,0 +1,9 @@
+---
+
+services:
+  app:
+    build: .
+    image: ghcr.io/berkeleylibrary/dvuploader:${USER:-default}-development
+    volumes:
+      - /srv/da:/opt/app/da:ro
+      - /srv/dataverse-prod/santee/etl:/opt/app/dataverse:ro
