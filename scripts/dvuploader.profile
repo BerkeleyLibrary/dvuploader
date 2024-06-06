@@ -1,0 +1,1 @@
+alias dvuploader="sudo /usr/local/sbin/dvuploader.sh"
