@@ -35,4 +35,6 @@ Defaults!/usr/local/sbin/dvuploader.sh !always_set_home
 # Then members of dpgdil can run your script like so
 dvuploader -key=$key -server=$server da/path/to/some/datadir
 dvuploader -key=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx -server=https://datasets.lib.berkeley.edu -did=doi:10.60503/D3/XXXXX /srv/dataverse/XXXXX
+
+# Note that the local directory /srv/dataverse-prod/dvsantee/etl/processing/ is mapped to /srv/dataverse when you run the dvuploader script
 ```
