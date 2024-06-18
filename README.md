@@ -20,12 +20,11 @@ alias dvuploader="sudo /usr/local/sbin/dvuploader.sh"
 # In /usr/local/sbin/dvuploader.sh
 #!/bin/sh -e
 exec docker run \
-  --init \
-  --quiet \
-  --rm \
-  --volume /srv/da:/opt/app/da:ro \
-  --volume /srv/dataverse-prod/dvsantee/etl/processing:/opt/app/dataverse:ro \
-  ghcr.io/berkeleylibrary/dvuploader:latest "$@"
+     --init \
+     --rm  \
+     --volume /srv/da:/srv/da:ro \
+     --volume /srv/dataverse-prod/dvsantee/etl/processing:/srv/dataverse:ro \
+     ghcr.io/berkeleylibrary/dvuploader:latest "$@"
 
 # In /etc/sudoers.d/dvuploader
 # MUST USE visudo to ensure the syntax is correct and avoid breaking sudo.
@@ -35,4 +34,5 @@ Defaults!/usr/local/sbin/dvuploader.sh !always_set_home
 
 # Then members of dpgdil can run your script like so
 dvuploader -key=$key -server=$server da/path/to/some/datadir
+dvuploader -key=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx -server=https://datasets.lib.berkeley.edu -did=doi:10.60503/D3/XXXXX /srv/dataverse/XXXXX
 ```
