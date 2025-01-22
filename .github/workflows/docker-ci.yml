@@ -1,0 +1,10 @@
+name: Docker CI
+
+on:
+  push:
+  release:
+  workflow_dispatch:
+
+jobs:  
+  build:
+    uses: BerkeleyLibrary/.github/.github/workflows/docker-build.yml@main
