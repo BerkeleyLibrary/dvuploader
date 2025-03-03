@@ -1,5 +1,7 @@
 # DVUploader Docker Wrapper
 
+This wraps the Python [dvuploader](https://github.com/gdcc/python-dvuploader/) package that provides parallel direct upload to Dataverse.
+
 ## Volumes
 
 The wrapper needs both Digital Assets and the Dataverse Prod volumes mounted at the following locations:
@@ -33,8 +35,8 @@ Defaults!/usr/local/sbin/dvuploader.sh !always_set_home
 %dpgdil ALL=(root) NOPASSWD: /usr/local/sbin/dvuploader.sh
 
 # Then members of dpgdil can run your script like so
-dvuploader -key=$key -server=$server da/path/to/some/datadir
-dvuploader -key=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx -server=https://datasets.lib.berkeley.edu -did=doi:10.60503/D3/XXXXX /srv/dataverse/XXXXX
+dvuploader da/path/to/some/filepaths --api-token $key --dataverse-url $server 
+dvuploader /srv/dataverse/XXXXX --api-token xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx --dataverse-url https://datasets.lib.berkeley.edu --pid doi:10.60503/D3/XXXXX --recurse 
 
 # Note that the local directory /srv/dataverse-prod/dvsantee/etl/processing/ is mapped to /srv/dataverse when you run the dvuploader script
 ```

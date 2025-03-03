@@ -1,5 +1,8 @@
-FROM eclipse-temurin:21
-ARG VERSION=v1.2.1
+FROM python:3.13-slim
 WORKDIR /opt/app
-ADD https://github.com/GlobalDataverseCommunityConsortium/dataverse-uploader/releases/download/$VERSION/DVUploader-$VERSION.jar DVUploader.jar
-ENTRYPOINT ["java", "-jar", "DVUploader.jar"]
+
+# Install python-dvuploader dependencies
+COPY requirements.txt /tmp
+RUN pip install -r /tmp/requirements.txt
+
+ENTRYPOINT [ "dvuploader" ]
