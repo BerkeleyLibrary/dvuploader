@@ -1,6 +1,6 @@
 # DVUploader Docker Wrapper
 
-This wraps the Python [dvuploader](https://github.com/gdcc/python-dvuploader/) package that provides parallel direct upload to Dataverse.
+This wraps the Python [dvuploader](https://github.com/gdcc/python-dvuploader/) package that provides parallel direct upload to Dataverse. There's also a `java` branch to track the [Java dvuploader](https://github.com/GlobalDataverseCommunityConsortium/dataverse-uploader) which we have used in the past.
 
 ## Volumes
 
