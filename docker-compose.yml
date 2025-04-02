@@ -6,4 +6,5 @@ services:
     image: ghcr.io/berkeleylibrary/dvuploader:${USER:-default}-development
     volumes:
       - /srv/da:/opt/app/da:ro
+      - /srv/dataverse-prod/dvsantee/etl/dvuploader-tmp:/tmp
       - /srv/dataverse-prod/dvsantee/etl/processing:/opt/app/dataverse:ro
