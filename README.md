@@ -13,7 +13,7 @@ Dataverse       -> /srv/dataverse-prod
 
 ## Permissions
 
-You don't necessarily want to give docker rights to users of this script, since docker implies root permissions. You can extend a limited ability to run the script with the following workaround:
+You don't necessarily want to give docker rights to users of this script, since docker implies root permissions. You can extend a limited ability to run the script with the following workaround (see [`scripts`](scripts)):
 
 ```sh
 # In system-wide profile
@@ -22,6 +22,7 @@ alias dvuploader="sudo /usr/local/sbin/dvuploader.sh"
 # In /usr/local/sbin/dvuploader.sh
 #!/bin/sh -e
 exec docker run \
+     -t \
      --init \
      --rm  \
      --volume /srv/da:/srv/da:ro \
