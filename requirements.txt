@@ -1,2 +1,1 @@
-# once dvuploader 0.3.0 is out, point this to a proper release spec
-dvuploader @ https://github.com/BerkeleyLibrary/python-dvuploader/archive/refs/heads/include-tab-ingest-rebased.zip
+dvuploader >= 0.3.0
