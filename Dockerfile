@@ -9,7 +9,7 @@ ENV APP_GID=105
 
 RUN groupadd --system --gid $APP_UID $APP_USER \
     && groupadd --system --gid $APP_GID $APP_GROUP \
-    && useradd --home-dir /opt/app --system --uid $APP_UID --gid $APP_USER -G $APP_GROUP $APP_USER
+    && useradd --home-dir /opt/app --system --uid $APP_UID --gid $APP_UID -G $APP_GROUP $APP_USER
 
 RUN chown -R $APP_USER:$APP_USER /opt/app
 
