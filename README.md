@@ -26,8 +26,8 @@ exec docker run \
      --init \
      --rm  \
      --volume /srv/da:/srv/da:ro \
-     --volume /srv/dataverse-prod/dvsantee/etl/dvuploader-tmp:/tmp \
-     --volume /srv/dataverse-prod/dvsantee/etl/processing:/srv/dataverse:ro \
+     --volume /srv/dataverse-prod-scratch/dvuploader-tmp:/tmp \
+     --volume /srv/dataverse-prod-scratch/etl/processing:/srv/dataverse:ro \
      ghcr.io/berkeleylibrary/dvuploader:latest "$@"
 
 # In /etc/sudoers.d/dvuploader
