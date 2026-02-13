@@ -1,0 +1,6 @@
+---
+
+services:
+  app:
+    image: ${DOCKER_APP_IMAGE}
+    volumes: !reset
