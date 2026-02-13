@@ -18,7 +18,13 @@ USER $APP_USER:$APP_GROUP
 # Install python-dvuploader dependencies
 COPY --chown=$APP_USER requirements.txt .
 RUN pip install -r requirements.txt
-
 ENV PATH="/opt/app/.local/bin:$PATH"
+
+# Install scripts (so they can be more easily installed on the host)
+COPY --chown=$APP_USER scripts /opt/app/scripts
+
+# Smell-check the installation
+RUN dvuploader --help && \
+    ls -l /opt/app/scripts
 
 ENTRYPOINT [ "dvuploader" ]
