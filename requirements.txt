@@ -1,1 +1,1 @@
-dvuploader >= 0.3.0
+dvuploader >= 0.3.0, < 0.4
